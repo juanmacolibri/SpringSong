@@ -6,10 +6,10 @@ using EnumLib;
 public class Birb : MonoBehaviour
 {
     public GameObject beak;
-    public bool turn = true;
+    public bool turn = true, isWeak;
     [SerializeField] float verticalForce, horizontalForce, moveDelayMin, moveDelayMax;
     [SerializeField] GameObject interact;
-    bool movePause;
+    bool movePause, alive = true;
     public KeyCode jump;
     // dis de scrip for cute lil birb
     void Start()
@@ -19,20 +19,21 @@ public class Birb : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(jump))
+        if (alive)
         {
-            Debug.Log("works");
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 9);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Beak pressed");
-            Debug.Log(interact.name);
-            interact.GetComponent<IInteractable>().InitInteraction(transform.gameObject);
-        }
-        else if (interact && Input.GetKeyUp(KeyCode.E))
-        {
-            interact.GetComponent<IInteractable>().EndInteraction();
+            if (Input.GetKeyDown(jump))
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 9);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                interact.GetComponent<IInteractable>().InitInteraction(transform.gameObject);
+            }
+            else if (interact && Input.GetKeyUp(KeyCode.E))
+            {
+                interact.GetComponent<IInteractable>().EndInteraction();
+            }
+
         }
     }
 
@@ -68,15 +69,35 @@ public class Birb : MonoBehaviour
         movePause = false;
     }
 
+    public void birdfuckingdies()
+    {
+        alive = false;
+        StartCoroutine(RotateDie());
+    }
+
+    IEnumerator RotateDie()
+    {
+        int n = 0;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        while (n < 180)
+        {
+            Vector3 rot = transform.rotation.eulerAngles;
+            transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z - 1);
+            n++;
+            yield return new WaitForSeconds(0.007f);
+        }
+    }
+
     public void SetInput(MoveType m, string s)
     {
-        Debug.Log("Start learning");
         switch (m)
         {
             case MoveType.Jump:
                 jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), s);
-                Debug.Log("learning complete");
                 break;
+
         }
     }
 }

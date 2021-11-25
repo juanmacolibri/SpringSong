@@ -6,14 +6,14 @@ public class Draggable : MonoBehaviour, IInteractable
 {
     public void EndInteraction()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Birb>().turn = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player_FSM>().turn = true;
         transform.GetChild(0).GetComponent<FixedJoint2D>().connectedBody = null ;
         transform.GetChild(0).GetComponent<FixedJoint2D>().enabled = false ;
     }
 
     public void InitInteraction(GameObject bird)
     {
-        bird.GetComponent<Birb>().turn = false;
+        bird.GetComponent<Player_FSM>().turn = false;
         transform.GetChild(0).GetComponent<FixedJoint2D>().connectedBody = bird.GetComponent<Rigidbody2D>();
         transform.GetChild(0).GetComponent<FixedJoint2D>().enabled = true;
     }

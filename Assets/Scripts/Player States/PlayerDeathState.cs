@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerDeathState : PlayerBaseState
+{
+    public override void EnterState(Player_FSM player)
+    {
+        Debug.Log("Se murió");
+    }
+    public override void Update(Player_FSM player)
+    {
+
+    }
+
+    public override void FixedUpdate(Player_FSM player)
+    {
+
+    }
+
+    public override void LateUpdate(Player_FSM player)
+    {
+
+    }
+
+    public override void OnCollisionEnter2D(Player_FSM player, Collision2D collision)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void OnTriggerEnter2D(Player_FSM player, Collider2D collision)
+    {
+        throw new System.NotImplementedException();
+    }
+
+}

@@ -16,6 +16,6 @@ public class Grabbables : MonoBehaviour, IInteractable
         GetComponent<Rigidbody2D>().isKinematic = true;
         Physics2D.IgnoreLayerCollision(6, 7);
         transform.parent = bird.transform;
-        transform.position = bird.GetComponent<Birb>().beak.transform.position;
+        transform.position = bird.transform.GetChild(0).transform.position;
     }
 }

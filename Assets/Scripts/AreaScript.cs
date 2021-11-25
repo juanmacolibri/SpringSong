@@ -14,9 +14,6 @@ public class AreaScript : MonoBehaviour
     List<KeyCode> keyList;
     void Start()
     {
-        //remover inicializacion mas tarder
-        inps.ResetInputs();
-
         CreateInputList();
     }
     private void CreateInputList()
@@ -43,6 +40,7 @@ public class AreaScript : MonoBehaviour
                 LearningArea();
                 break;
             case AreaType.Hiding:
+                HidingArea();
                 break;
             case AreaType.Bathing:
                 break;
@@ -55,9 +53,9 @@ public class AreaScript : MonoBehaviour
         {
             if (Input.GetKey(vKey) && active)
             {
-                Debug.Log("button pressed");
                 inps.SetInputs(MT, vKey.ToString());
                 active = false;
+                GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SavaManager>().AddArea(gameObject.name);
             }
         }
     }

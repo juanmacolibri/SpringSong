@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8252e192d2b7a0c40a220eafd9ed6cc8, type: 3}
-  m_Name: BirbInputs
+  m_Script: {fileID: 11500000, guid: 6712d41e3d5010e4e8c588f304d7ce95, type: 3}
+  m_Name: Saves
   m_EditorClassIdentifier: 
-  moves: 
-  keys:
-  - Mouse0
+  dataExists: 0
+  IP: {fileID: 11400000, guid: 392fe4ec9384e1d4d8573a89d2279cb1, type: 2}
+  birbPosition: {x: 26.797785, y: 1.0804484, z: 0}
+  learningAreas: []
+  deadObjects: []

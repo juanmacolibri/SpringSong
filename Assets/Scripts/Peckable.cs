@@ -15,6 +15,9 @@ public class Peckable : MonoBehaviour, IInteractable
             case PeckType.Break:
                 BreakInteraction();
                 break;
+            case PeckType.Food:
+                FoodInteraction(bird);
+                break;
         }
     }
 
@@ -36,8 +39,15 @@ public class Peckable : MonoBehaviour, IInteractable
         }
     }
 
-    private void FoodInteraction()
+    private void FoodInteraction(GameObject bird)
     {
-
+        if (gameObject.activeSelf)
+        {
+            GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SavaManager>().SaveGame(GameObject.FindGameObjectWithTag("Player").transform.position);
+            GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SavaManager>().AddObject(gameObject.name);
+            bird.GetComponent<Player_FSM>().isWeak = false;
+            //mejorar salud
+            gameObject.SetActive(false);
+        }
     }
 }
