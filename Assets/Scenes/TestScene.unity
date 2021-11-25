@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 393566320}
   - component: {fileID: 393566319}
   - component: {fileID: 393566318}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 482895279}
   - component: {fileID: 482895278}
   - component: {fileID: 482895277}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 828333716}
   - component: {fileID: 828333715}
   - component: {fileID: 828333717}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 874179756}
   - component: {fileID: 874179757}
   - component: {fileID: 874179758}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 1209782839}
   - component: {fileID: 1209782838}
   - component: {fileID: 1209782837}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 1394917106}
   - component: {fileID: 1394917102}
   - component: {fileID: 1394917101}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1322,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686904788463308084, guid: 23d494a54037e0d48a9ab8ab64940b91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.385
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 686904788463308084, guid: 23d494a54037e0d48a9ab8ab64940b91, type: 3}
       propertyPath: m_LocalRotation.w
