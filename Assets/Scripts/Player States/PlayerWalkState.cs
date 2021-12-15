@@ -10,6 +10,7 @@ public class PlayerWalkState : PlayerBaseState
         Debug.Log("Enter Walk State");
         if (player.isWeak) player.speedPercentage = player.speedPercentageWhenWeak;
         else player.speedPercentage = 1;
+        player.anim.SetInteger("AnimationPar", 1);
     }
     public override void Update(Player_FSM player)
     {
@@ -29,7 +30,11 @@ public class PlayerWalkState : PlayerBaseState
     public override void FixedUpdate(Player_FSM player)
     {
         if (Input.GetAxis("Horizontal") >= 0.001f || Input.GetAxis("Horizontal") <= -0.001) Methods.HorizontalMovement(player, player.movementSpeed, player.speedPercentage, -player.movementDirection);
-        else player.TransitionToState(player.idleState);
+        else
+        {
+            player.anim.SetInteger("AnimationPar", 0);
+            player.TransitionToState(player.idleState);
+        }
     }
     public override void OnCollisionEnter2D(Player_FSM player, Collision2D collision)
     {

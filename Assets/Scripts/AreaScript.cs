@@ -8,8 +8,8 @@ public class AreaScript : MonoBehaviour
     public enum AreaType { Learning, Hiding, Bathing}
     public AreaType AT;
 
-    [SerializeField] InputContainer inps;
-    public bool active = true;
+    public InputContainer inps;
+    [HideInInspector] public bool active = true;
     public MoveType MT;
     List<KeyCode> keyList;
     void Start()

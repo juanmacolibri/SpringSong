@@ -10,7 +10,9 @@ public class Player_FSM : MonoBehaviour
 
     [Header("Components")]
     public Rigidbody2D rb;
+    public Animator anim;
     public LayerMask groundLayer;
+    public GameObject model3d;
 
     [Header("Horizontal Movement")]
     public float movementSpeed;
@@ -86,14 +88,16 @@ public class Player_FSM : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") > 0)
             {
-                spriteRenderer.flipX = true;
-                pico.GetComponent<SpriteRenderer>().flipX = true;
+                //spriteRenderer.flipX = true;
+                //pico.GetComponent<SpriteRenderer>().flipX = true;
+                model3d.transform.localEulerAngles = new Vector3(model3d.transform.localEulerAngles.x, 90);
                 pico.transform.localPosition = new Vector3(7.15f, 9.6f, transform.localPosition.z);
             }
             else if (Input.GetAxis("Horizontal") < 0)
             {
-                spriteRenderer.flipX = false;
-                pico.GetComponent<SpriteRenderer>().flipX = false;
+                //spriteRenderer.flipX = false;
+                //pico.GetComponent<SpriteRenderer>().flipX = false;
+                model3d.transform.localEulerAngles = new Vector3(model3d.transform.localEulerAngles.x, -90);
                 pico.transform.localPosition = new Vector3(-7.15f, 9.6f, transform.localPosition.z);
             }
         }

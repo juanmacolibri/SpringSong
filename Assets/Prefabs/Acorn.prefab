@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5517218200491784673}
   - component: {fileID: 5517218200491784678}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Acorn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 5517218201108451538}
   - component: {fileID: 5517218201108451539}
   - component: {fileID: 5517218201108451548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataExists: 0
   IP: {fileID: 11400000, guid: 392fe4ec9384e1d4d8573a89d2279cb1, type: 2}
-  birbPosition: {x: 26.749382, y: 1.0801556, z: 0}
-  learningAreas:
-  - Learning Area
-  - Learning Area (1)
-  deadObjects:
-  - Worm
+  birbPosition: {x: 53.20808, y: -4.84537, z: 0}
+  learningAreas: []
+  deadObjects: []
